@@ -176,9 +176,7 @@
             <button type="submit">Submit</button>
         </form>
 
-        <div class="alert">
-            Format pengumpulan yang diharapkan: Gambar Makanan (PNG, JPEG), Gambar Minuman (PNG, JPEG, PDF).
-        </div>
+        <div class="alert" id="duplicate-alert" style="display: none;"></div>
 
         <div>
             <h3>Data yang Disimpan</h3>
@@ -214,7 +212,9 @@
             }
 
             if (duplicateFound) {
-                alert('Data makanan dengan nama dan tipe yang sama sudah ada.');
+                var duplicateAlert = document.getElementById('duplicate-alert');
+                duplicateAlert.innerHTML = 'Data makanan dengan nama dan tipe yang sama sudah ada.';
+                duplicateAlert.style.display = 'block';
                 return;
             }
 
